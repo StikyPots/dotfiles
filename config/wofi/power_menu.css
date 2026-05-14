@@ -1,0 +1,38 @@
+window {
+  background-color: rgba(20, 20, 20, 0.95);
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#main {
+  margin: 0;
+  padding: 2em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+#input {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#entry {
+  font-size: 2em;
+  padding: 1em;
+  border-radius: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+#entry:selected {
+  background-color: #5566ff;
+  color: white;
+}
+

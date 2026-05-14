@@ -1,0 +1,113 @@
+{
+  "layer": "top",
+  "height": 40,
+  "modules-left": [
+    "custom/arch",
+    "hyprland/workspaces",
+    "custom/pause",
+    "custom/skip",
+  ],
+  "modules-center": [
+    "clock",
+    "custom/player_title"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/shutdownButton",
+    "custom/pulseaudioicon",
+    "pulseaudio"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "default": "",
+    },
+    "persistent-workspaces": {
+      "HDMI-A-1": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "DVI-A-1": [
+        5,
+        6,
+        7,
+        8
+      ],
+    },
+    "sort-by-number": true,
+  },
+  "custom/arch": {
+    "format": "󰣇",
+    "on-click": "rofi -show drun",
+    "tooltip": false,
+  },
+  "custom/shutdownButton": {
+    "format": "",
+    "on-click": "shutdown -h 0",
+    "tooltip": false,
+  },
+  "custom/pause": {
+    "format": "{}",
+    "tooltip": false,
+    "exec": "~/.config/waybar/scripts/playerctl-playpause-icon.sh",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "interval": 1,
+  },
+  "custom/skip": {
+    "format": "󰒭",
+    "tooltip": false,
+    "return-type": "json",
+    "on-click": "playerctl next",
+    "interval": 1,
+  },
+  "custom/player_title": {
+    "format": "{}",
+    "tooltip": false,
+    "exec": "~/.config/waybar/scripts/playerctl-title.sh",
+    "return-type": "json",
+    "interval": 1,
+  },
+  "clock": {
+    "interval": 60,
+    "tooltip": true,
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%Y-%m-%d}",
+  },
+  "custom/pulseaudioicon": {
+    "format": "",
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10,
+  },
+  "pulseaudio": {
+    "format": "{volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "phone-muted": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        ""
+      ],
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol",
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ],
+  },
+}
